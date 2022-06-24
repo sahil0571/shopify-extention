@@ -1,0 +1,29 @@
+
+<script>
+
+  // console.log('Some thing : ', '{{ request.origin }}');
+  function loadScript(url) {
+    var script = document.createElement('script');
+    script.src = url;
+    var head = document.getElementsByTagName('head')[0];
+    head.appendChild(script);
+
+    // script.addEventListener('load', (e) => {
+    //   console.log('jquery loaded');
+    // })
+  }
+  const app_url = 'https://dm-holdings.online';
+  let url = `${app_url}/getscript/?shop={{ request.host }}`
+  // console.log('script url : ', url);
+
+  loadScript(url);
+
+</script>
+
+{% schema %}
+{
+"name": "Tikpix-Tiktok Intaller",
+"target": "head",
+"settings": []
+}
+{% endschema %}
